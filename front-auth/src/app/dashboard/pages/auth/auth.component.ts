@@ -4,6 +4,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UtilService } from '../../../shared/utils/util.service';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
+import { DataService } from '../../../services/data.service';
+import { ResponseModelDto, User } from '../../../interfaces/user';
 
 
 @Component({
@@ -21,7 +23,8 @@ export default class AuthComponent {
 
   constructor(private readonly utilService: UtilService,
     private readonly authService: AuthService,
-    private readonly router: Router
+    private readonly router: Router,
+    private dataService: DataService
   ){}
 
   authUserForm = new FormGroup({
@@ -36,7 +39,7 @@ export default class AuthComponent {
   }
 
   goHome(){
-    this.router.navigateByUrl('/home')
+    this.router.navigateByUrl('/home', )
   }
 
   validateValue(value: string | null | undefined): string{
@@ -44,8 +47,8 @@ export default class AuthComponent {
   }
 
   callServiceAuth(email: string, passwordMD5: string){
-    this.authService.loginAuth(email, passwordMD5).subscribe((value: string)=>{
-      console.log(value);
+    this.authService.loginAuth(email, passwordMD5).subscribe((value: ResponseModelDto<User>)=>{
+      this.dataService.setData(value.data);
       this.goHome()
     }, (error)=>{
       alert("Hubo un error al consumir el servicio de login")
