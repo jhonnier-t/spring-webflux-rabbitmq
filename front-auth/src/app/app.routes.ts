@@ -13,12 +13,12 @@ export const routes: Routes = [
             {
                 path: 'audit',
                 title: "Audit",
-                loadComponent: () => import('./dashboard/pages/home/users/users.component')
+                loadComponent: () => import('./dashboard/pages/home/audit/audit.component')
             },
             {
                 path: 'users',
                 title: "Users",
-                loadComponent: () => import('./dashboard/pages/home/audit/audit.component')
+                loadComponent: () => import('./dashboard/pages/home/users/users.component')
             }
         ]
         //canActivate: [AuthGuard],

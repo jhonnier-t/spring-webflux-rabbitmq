@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { UserService } from '../../../services/user.service';
-import { ResponseModelDto, User } from '../../../interfaces/user';
+import { User } from '../../../interfaces/user';
 
 @Component({
   selector: 'app-card-item-user',
@@ -15,15 +14,6 @@ import { ResponseModelDto, User } from '../../../interfaces/user';
 })
 export class CardItemUserComponent { 
 
-  users: User[] = [];
+  @Input () users: User[] = []; 
   
-  constructor(private userService: UserService){}
-
-  ngOnInit(): void {
-    this.userService.listUsers().subscribe((response: any)=>{
-      this.users = response[0].data;
-    });
-    
-  }
-
 }

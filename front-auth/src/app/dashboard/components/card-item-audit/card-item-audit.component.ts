@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AuditService } from '../../../services/audit.service';
 import { Audit } from '../../../interfaces/audit';
 
@@ -15,15 +15,6 @@ import { Audit } from '../../../interfaces/audit';
 })
 export class CardItemAuditComponent { 
 
-  audits: Audit[] = [];
+  @Input () audits: Audit[] = [];
   
-  constructor(private auditService: AuditService){}
-
-  ngOnInit(): void {
-    this.auditService.listAudit().subscribe((response: any)=>{
-      this.audits = response[0].data;
-    });
-    
-  }
-
 }
