@@ -16,6 +16,8 @@ services:
       - ./sender:/app
     depends_on:
       - rabbitmq
+    env_file:
+      - .env
   receiver:
     build: ./receiver
     container_name: receiver
