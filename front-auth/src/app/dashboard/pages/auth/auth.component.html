@@ -1,34 +1,36 @@
 <div class="bg-gray-100 flex justify-center items-center h-screen">
-    <!-- Left: Image -->
 <div class="w-1/2 h-screen hidden lg:block">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvumI_LzZuqktB_OQfYowHsu88QmULkrx_mw&s" alt="Placeholder Image" class="object-cover w-full h-full">
 </div>
-<!-- Right: Login Form -->
 <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
   <h1 class="text-2xl font-semibold mb-4">Login</h1>
   <form action="#" method="POST" [formGroup]="authUserForm" (ngSubmit)="onSubmit()">
-    <!-- Username Input -->
     <div class="mb-4">
       <label for="username" class="block text-gray-600">Username/Email</label>
       <input formControlName="username" type="text" id="username" name="username" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+      @if (authUserForm.get('username')?.invalid && (authUserForm.get('username')?.dirty || authUserForm.get('username')?.touched)) {
+        <small class="text-red-600">Username is required.</small>
+      }
     </div>
-    <!-- Password Input -->
     <div class="mb-4">
       <label for="password" class="block text-gray-600">Password</label>
       <input formControlName="password" type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
-      <span class="password-toggle-icon"><i class="fas fa-eye"></i></span>
+      @if (authUserForm.get('password')?.invalid && (authUserForm.get('password')?.dirty || authUserForm.get('password')?.touched)) {
+        <small class="text-red-600">Password is required.</small>
+      }
     </div>
-    <!-- Remember Me Checkbox -->
     <div class="mb-4 flex items-center">
       <input type="checkbox" id="remember" name="remember" class="text-blue-500">
       <label for="remember" class="text-gray-600 ml-2">Remember Me</label>
     </div>
-    <!-- Forgot Password Link -->
     <div class="mb-6 text-blue-500">
       <a href="#" class="hover:underline">Forgot Password?</a>
     </div>
-    <!-- Login Button -->
-    <button [disabled]="!authUserForm.valid" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+    @if (!authUserForm.invalid) {
+      <button [disabled]="false" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+    }@else {
+      <button [disabled]="true" type="submit" class="bg-gray-500 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+    }
   </form>
   <!-- Sign up  Link -->
   <div class="mt-6 text-blue-500 text-center">

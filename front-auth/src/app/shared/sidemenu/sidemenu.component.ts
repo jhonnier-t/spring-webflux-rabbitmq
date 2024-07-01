@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { User, ResponseModelDto } from '../../interfaces/user';
 import { AuthService } from '../../services/auth.service';
 import { DataService } from '../../services/data.service';
@@ -21,6 +21,10 @@ export class SidemenuComponent {
   public menuItems = routes.map(path => path.children ?? []).flat();
 
   user: User = {} as User;
+
+  activeRouteDashboard = signal<boolean>(true);
+  activeRouteAudit = signal<boolean>(false);
+  activeRouteUsers = signal<boolean>(false);
 
   constructor(private readonly authService: AuthService,
     private readonly router: Router,
