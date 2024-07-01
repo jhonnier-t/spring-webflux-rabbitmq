@@ -40,9 +40,9 @@ public class AuthController {
         boolean statusAuth = userService.verifyAuthUser(user);
         if (statusAuth){
 
-            userService.updateUserSession(user.getEmail(), true);
+            User responseUser = userService.updateUserSession(user.getEmail(), true);
             return new ResponseEntity<>(Mono.just(new ResponseModelDto<>(HttpStatus.OK.value(),
-                    "Login successful", user)),
+                    "Login successful", responseUser)),
                     HttpStatus.OK);
         }
         return new ResponseEntity<>(Mono.just(new ResponseModelDto<>(HttpStatus.BAD_REQUEST.value(),
