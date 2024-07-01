@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5b5d844-c42c-41f1-b2c9-26e8b8940cb8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/spring-webflux-rabbitmq.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/spring-rabbitmq-microservices.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-auth/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-auth/src/app/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-auth/src/app/shared/environments/environments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-auth/src/app/shared/environments/environments.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receiver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/receiver/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/java/com/test/softka/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/java/com/test/softka/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/front-auth/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-auth/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/front-auth/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-auth/src/app/shared/sidemenu/sidemenu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-auth/src/app/shared/sidemenu/sidemenu.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,29 +19,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2icimxRjbmI0KuTHtuxeG2JzhpP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/auth",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jhonnier/Desktop/prueba-tecnica-softka/spring-webflux-rabbitmq/sender",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/auth&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jhonnier/Desktop/prueba-tecnica-softka/spring-webflux-rabbitmq/sender&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -64,7 +58,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719796429936</updated>
-      <workItem from="1719796430845" duration="1916000" />
+      <workItem from="1719796430845" duration="8728000" />
+      <workItem from="1719815680156" duration="4322000" />
     </task>
     <servers />
   </component>

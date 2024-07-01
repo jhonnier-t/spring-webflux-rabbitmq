@@ -1,4 +1,4 @@
-FROM node:18.17.0-alpine AS build
+FROM node:18.19.0-alpine AS build
 USER root
 WORKDIR /frontauth/app
 COPY package*.json ./
@@ -7,5 +7,5 @@ COPY . .
 RUN npm run build
 
 FROM nginx:alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /frontauth/app/www/ /usr/share/nginx/html/
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /frontauth/app/dist/front-auth/browser /usr/share/nginx/html

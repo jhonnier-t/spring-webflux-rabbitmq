@@ -30,3 +30,10 @@ services:
       - rabbitmq
     env_file:
       - .env
+  frontauth:
+    build: ./front-auth
+    container_name: frontauth
+    ports:
+      - "8083:80"
+    depends_on:
+      - sender
