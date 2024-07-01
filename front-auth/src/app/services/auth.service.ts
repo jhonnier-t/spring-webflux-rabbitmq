@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  pathAuth: string = "/auth/login" 
+  pathAuth: string = "/softka/auth/login" 
 
   constructor(private http: HttpClient) { }
 

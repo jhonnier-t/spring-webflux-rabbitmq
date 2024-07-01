@@ -9,10 +9,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
@@ -34,6 +31,7 @@ public class AuthController {
         this.rabbitTemplate = rabbitTemplate;
     }
 
+    @CrossOrigin(origins = "${URL_HOST_FRONT}")
     @PostMapping("/login")
     public ResponseEntity<Mono<String>> login(@RequestBody User user) {
         Audit auditEvent = new Audit(null, user.getEmail(), EventEnum.LOGIN.getValor(), LocalDateTime.now());
@@ -46,6 +44,7 @@ public class AuthController {
         return new ResponseEntity<>(Mono.just("Login denied"), HttpStatus.BAD_REQUEST);
     }
 
+    @CrossOrigin(origins = "${URL_HOST_FRONT}")
     @PostMapping("/logout")
     public ResponseEntity<Mono<String>> logout(@RequestBody User user) {
         Audit auditEvent = new Audit(null, user.getEmail(), EventEnum.LOGOUT.getValor(), LocalDateTime.now());
