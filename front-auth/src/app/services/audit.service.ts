@@ -14,7 +14,7 @@ export class AuditService {
 
   constructor(private http: HttpClient) { }
 
-  listUsers(): Observable<ResponseModelDto<Audit[]>>{
+  listAudit(): Observable<ResponseModelDto<Audit[]>>{
     return this.http.get<ResponseModelDto<Audit[]>>(`${environment.apiBaseUrl}${this.pathAuth}/list`);
   }
 
