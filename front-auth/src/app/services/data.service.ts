@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private data: any;
+  private data = signal<any>({});
 
   setData(data: any) {
-    this.data = data;
+    this.data.set(data);
   }
 
   getData() {
-    return this.data;
+    return this.data();
   }
 }
