@@ -22,7 +22,7 @@ public class AuditController {
     private AuditService auditService;
 
     @CrossOrigin(origins = "${URL_HOST_FRONT}")
-    @PostMapping("/list")
+    @GetMapping("/list")
     public ResponseEntity<Flux<ResponseModelDto<List<Audit>>>> listAudit() {
         List<Audit> userList = auditService.findAllAudit();
         if (!userList.isEmpty()){

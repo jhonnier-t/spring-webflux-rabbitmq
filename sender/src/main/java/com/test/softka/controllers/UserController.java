@@ -20,8 +20,8 @@ public class UserController {
     private UserService userService;
 
     @CrossOrigin(origins = "${URL_HOST_FRONT}")
-    @PostMapping("/list")
-    public ResponseEntity<Flux<ResponseModelDto<List<User>>>> listUsers(@RequestBody User user) {
+    @GetMapping("/list")
+    public ResponseEntity<Flux<ResponseModelDto<List<User>>>> listUsers() {
         List<User> userList = userService.getAllUsers();
         if (!userList.isEmpty()){
             return new ResponseEntity<>(Flux.just(new ResponseModelDto<>(HttpStatus.OK.value(),
